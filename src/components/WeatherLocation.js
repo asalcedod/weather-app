@@ -5,7 +5,7 @@ import WeatherData from './WeatherData';
 const WeatherLocation = () => (
     // Destructuring
     <div>
-        <Location city={"Colombia"}></Location>
+        <Location city={ 'Colombia' }></Location>
         <WeatherData></WeatherData>
     </div>
 );
