@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import WeatherLocation from './components/WeatherLocation';
+import LocationList from './components/LocationList';
 import logo from './logo.svg';
 import './App.css';
-
+const cities = [
+  "Barranquilla,co",
+  "Bogota,co",
+  "Antioquia,co",
+  "Cali,co",
+  "Cartagena,co",
+  "Santa Marta,co"
+]
 class App extends Component {
   render() {
     return (
@@ -11,7 +18,7 @@ class App extends Component {
           <p>
             Hello Word.
           </p>
-        <WeatherLocation></WeatherLocation>
+        <LocationList cities = {cities}></LocationList>
       </div>
     );
   }
