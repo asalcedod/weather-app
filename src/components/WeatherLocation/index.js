@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import LinearProgress from '@material-ui/core/LinearProgress'
 import { PropTypes } from 'prop-types'
 import Location from './Location';
 import WeatherData from './WeatherData';
 import getUrlWeatherByCity from './../../services/getUrlWeatherByCity';
 import transformWeather from './../../services/transformWeather';
+import ProgressBar from './ProgressBar';
 import './styles.css';
 
 
@@ -38,21 +38,21 @@ class WeatherLocation extends Component {
                 data: newWeather
             })
         });
-
         
     }
     render() {
         const { city, data } = this.state;
+        const {onWeatherLocationClick} = this.props;
         return (
-            <div className="weatherLocationCont">
+            <div className="weatherLocationCont" onClick={onWeatherLocationClick}>
                 <Location city={city}></Location>
-                {data ? <WeatherData data={data}></WeatherData> : <LinearProgress></LinearProgress>}
+                {data ? <WeatherData data={data}></WeatherData> : <ProgressBar color="black" colorBar="grey"></ProgressBar>}
             </div>
         )
     };
-
 };
 WeatherLocation.propType = {
     city: PropTypes.string.isRequired,
+    onWeatherLocationClick: PropTypes.func
 }
 export default WeatherLocation;

@@ -4,6 +4,9 @@
     height: 100px;
     line-height: 100px;
     border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+
 }
 
 .weatherTemperatureCont {
@@ -12,7 +15,7 @@
 }
 
 .temperature {
-    font-size: 35px;
+    font-size: 28px;
     font-weight: bold;
     padding-left: 20px;
     color: #333;
@@ -24,7 +27,7 @@
 }
 
 .wicon {
-    color: #F77206;
+    color: rgb(0, 0, 0);
 }
 
 .weatherExtraInfoCont {
@@ -36,7 +39,7 @@
 
 .extraInfoText {
     display: block;
-    color: #1535C5;
+    color: rgb(0, 0, 0);
     font-size: 18px;
     font-weight: bold;
 }

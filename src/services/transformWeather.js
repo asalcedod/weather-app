@@ -5,7 +5,7 @@ import {
     RAIN,
     SNOW,
     THUNDER,
-    DRIZZLE
+    RAINDROPS
 } from './../constants/weathers';
 
 const getTemp = kelvin => {
@@ -17,7 +17,7 @@ const getWeatherState = weather => {
     if (id < 300) {
         return THUNDER;
     } else if (id < 400) {
-        return DRIZZLE;
+        return RAINDROPS;
     } else if (id <600) {
         return RAIN;
     } else if (id < 700) {

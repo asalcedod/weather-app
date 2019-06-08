@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import Paper from '@material-ui/core/Paper';
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import Toolbar from '@material-ui/core/Toolbar';
 import LocationList from './components/LocationList';
-import logo from './logo.svg';
+import {Grid, Row, Col} from 'react-flexbox-grid';
+import ForecastExtended from './components/ForecastExtended';
 import './App.css';
 const cities = [
   "Barranquilla,co",
@@ -11,15 +16,36 @@ const cities = [
   "Santa Marta,co"
 ]
 class App extends Component {
+  handleSelectionLocation = city => {
+    console.log("handleSelectionLocation");
+  };
   render() {
     return (
-      <div className="App">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hello Word.
-          </p>
-        <LocationList cities = {cities}></LocationList>
-      </div>
+        <Grid>
+          <Row>
+            <AppBar position='sticky'>
+              <Toolbar>
+                <Typography variante='title' color='inherit'>
+                  Weather App
+                </Typography>
+              </Toolbar>
+            </AppBar>
+          </Row>
+          <Row>
+            <Col xs={12} sm={6}>
+              <LocationList cities = {cities} onSelectedLocation = {this.handleSelectionLocation}></LocationList>
+            </Col>
+            <Col xs={12} sm={6}>
+              <Paper elevation={4}>
+                <div className="details">
+                  <ForecastExtended>
+                    
+                  </ForecastExtended>
+                </div>
+              </Paper>
+            </Col>
+          </Row>
+        </Grid>
     );
   }
 }
